@@ -1,55 +1,82 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Khitanan</title>
+  <title>Undangan Digital</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Tambahkan Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
   <div id="app">
-
+    <!-- Background -->
     <div class="background"></div>
+
     <!-- Page Opening -->
-    <section class="page" id="opening">
+    <section class="page active" id="opening">
       <h1>Undangan Khitanan</h1>
       <p>Assalamu'alaikum Wr. Wb.</p>
       <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Anda untuk menghadiri acara khitanan putra kami.</p>
-      <button onclick="nextPage()">Lanjutkan</button>
+      <!-- Tombol navigasi -->
+      <button class="nav-btn next" onclick="goToPage('profile')">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </section>
 
     <!-- Page Profile -->
     <section class="page" id="profile">
-      <h2>Profil Keluarga</h2>
-      <p>Acara ini merupakan khitanan putra kami:</p>
-      <p><strong>Nama Putra:</strong> Muhammad Zain Arfandi</p>
-      <button onclick="nextPage()">Lanjutkan</button>
+      <h2>Profil</h2>
+      <p>Nama: Putra Tersayang</p>
+      <p>Usia: 7 Tahun</p>
+      <!-- Tombol navigasi -->
+      <button class="nav-btn prev" onclick="goToPage('opening')">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button class="nav-btn next" onclick="goToPage('info')">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </section>
 
     <!-- Page Informasi Acara -->
-    <section class="page" id="event-info">
+    <section class="page" id="info">
       <h2>Informasi Acara</h2>
-      <p><strong>Tanggal:</strong> Minggu, 15 Januari 2025</p>
-      <p><strong>Waktu:</strong> 10.00 WIB</p>
-      <p><strong>Tempat:</strong> Jl. Sukamaju No. 45, Jakarta</p>
-      <button onclick="nextPage()">Lanjutkan</button>
+      <p>Hari: Minggu</p>
+      <p>Tanggal: 24 Desember 2024</p>
+      <p>Waktu: 10.00 WIB</p>
+      <p>Lokasi: Rumah Kami</p>
+      <!-- Tombol navigasi -->
+      <button class="nav-btn prev" onclick="goToPage('profile')">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button class="nav-btn next" onclick="goToPage('prayers')">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </section>
 
     <!-- Page Doa -->
-    <section class="page" id="prayer">
+    <section class="page" id="prayers">
       <h2>Doa</h2>
-      <p>Kami memohon doa dan kehadiran Anda agar acara ini diberkahi dan berjalan lancar.</p>
-      <button onclick="nextPage()">Lanjutkan</button>
+      <p>Semoga Allah SWT senantiasa memberikan keberkahan dan kesehatan.</p>
+      <!-- Tombol navigasi -->
+      <button class="nav-btn prev" onclick="goToPage('info')">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button class="nav-btn next" onclick="goToPage('thanks')">
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </section>
 
     <!-- Page Ucapan Terima Kasih -->
     <section class="page" id="thanks">
       <h2>Ucapan Terima Kasih</h2>
-      <p>Terima kasih atas doa dan kehadiran Anda. Semoga Allah SWT membalas segala kebaikan Anda dengan berlipat ganda.
-      </p>
-      <p>Wassalamu'alaikum Wr. Wb.</p>
+      <p>Terima kasih atas doa dan kehadiran Anda.</p>
+      <!-- Tombol navigasi -->
+      <button class="nav-btn prev" onclick="goToPage('prayers')">
+        <i class="fas fa-arrow-left"></i>
+      </button>
     </section>
   </div>
 
