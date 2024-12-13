@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="style.css">
   <!-- Tambahkan Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -16,30 +21,38 @@
     <div class="background"></div>
 
     <!-- Page Opening -->
-  <section class="page active" id="opening">
-    <h1>Walimatul Khitanan</h1>
-    <p>Muhammad Zain Arfandi</p>
-    <p>Kepada Yth Ibu/Bapak/Saudara/i</p>
-    <p id="guest-name">[Nama Tamu]</p>
-    <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Anda untuk menghadiri acara khitanan putra kami.</p>
-    <!-- Tombol navigasi -->
-    <button class="nav-btn next" onclick="nextPage()">
-      <i class="fas fa-arrow-right"></i> Buka Undangan
-    </button>
-  </section>
+    <section class="page active" id="opening">
+      <h1 style="margin-bottom:-10px;font-size: 52px;">Walimatul Khitan</h1>
+      <h3 class="formal-text">Muhammad Zain Arfandi</h3>
+      <i>
+        <div style="font-size:12px; margin-top:35px;">Kepada Yth<br>Bapak/Ibu/Saudara/i</div>
+      </i>
+      <p id="guest-name">[Nama Tamu]</p>
+      <i>
+        <div style="font-size:12px;">Mohon maaf apabila ada kesalahan penulisan nama/gelar</div>
+      </i>
+      <!-- Tombol navigasi -->
+      <button class="nav-btn next" onclick="nextPage()">
+        Buka Undangan
+      </button>
+    </section>
 
     <!-- Page Profile -->
     <section class="page" id="profile">
-      <h2>Profil</h2>
-      <p>Nama: Putra Tersayang</p>
-      <p>Usia: 7 Tahun</p>
-      <!-- Tombol navigasi -->
-      <button class="nav-btn prev" onclick="goToPage('opening')">
-        <i class="fas fa-arrow-left"></i>
-      </button>
-      <button class="nav-btn next" onclick="goToPage('info')">
-        <i class="fas fa-arrow-right"></i>
-      </button>
+      <p>
+        بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْ<br/>
+        <b>Assalamu'alaikum warahmatullahi wabarakatuh</b><br/><br />
+        Tanpa mengurangi rasa hormat, kami bermaksud mengundang sekaligus mengharapkan doa restu dari Bapak/Ibu/Saudara/i dalam
+        acara Walimatul Khitan putra kami:
+      </p>
+    <div class="profile-photo">
+      <img src="profile.png" alt="Foto Muhammad Zain Arfandi" />
+    </div>      
+    <h3 class="formal-text">Muhammad Zain Arfandi</h3>
+      <p>
+        Putra dari pasangan<br/>
+        Bapak Wahyudi Nugroho & Ibu Yuni Riana
+      </p>
     </section>
 
     <!-- Page Informasi Acara -->
