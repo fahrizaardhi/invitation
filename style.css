@@ -1,20 +1,43 @@
+/* Gaya umum */
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   color: #333;
-  text-align: center;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
+/* Ukuran responsif khusus untuk handphone */
 #app {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Gaya untuk latar belakang */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpeg');
+  /* Path gambar latar */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(0.9);
+  /* Efek gelap agar teks terlihat */
+}
+
+/* Gaya untuk setiap halaman */
 .page {
   display: none;
   flex-direction: column;
@@ -28,22 +51,46 @@ body {
   display: flex;
 }
 
+/* Judul dan teks */
 h1,
 h2 {
   color: #007BFF;
 }
 
+p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Tombol */
 button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
   color: #fff;
   background-color: #007BFF;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
