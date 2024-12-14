@@ -60,3 +60,39 @@ document.addEventListener('DOMContentLoaded', () => {
     getGuestNameFromURL(); // Ambil nama tamu
     showPage(currentPageIndex); // Tampilkan halaman pertama
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const pages = document.querySelectorAll('.page');
+  let currentPageIndex = 0;
+
+  // Fungsi untuk menampilkan halaman berdasarkan index
+  function showPage(index) {
+    pages.forEach((page, i) => {
+      if (i === index) {
+        page.classList.add('active');
+      } else {
+        page.classList.remove('active');
+      }
+    });
+  }
+
+  // Menampilkan halaman pertama
+  showPage(currentPageIndex);
+
+  // Menangani scroll untuk berpindah halaman
+  window.addEventListener('wheel', function(event) {
+    if (event.deltaY > 0) {
+      // Scroll ke bawah, pindah ke halaman berikutnya
+      if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        showPage(currentPageIndex);
+      }
+    } else {
+      // Scroll ke atas, pindah ke halaman sebelumnya
+      if (currentPageIndex > 0) {
+        currentPageIndex--;
+        showPage(currentPageIndex);
+      }
+    }
+  });
+});
