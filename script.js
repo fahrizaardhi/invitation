@@ -1,4 +1,4 @@
-let currentPageIndex = 0; // Index halaman aktif
+let currentPageIndex = 0; // Indeks halaman aktif
 const pages = document.querySelectorAll(".page"); // Daftar semua halaman
 
 /**
@@ -7,7 +7,7 @@ const pages = document.querySelectorAll(".page"); // Daftar semua halaman
  */
 function showPage(index) {
     pages.forEach((page, i) => {
-        page.classList.toggle("active", i === index);
+        page.classList.toggle("active", i === index); // Menambahkan class 'active' untuk halaman yang sesuai
     });
 }
 
@@ -59,40 +59,15 @@ function getGuestNameFromURL() {
 document.addEventListener('DOMContentLoaded', () => {
     getGuestNameFromURL(); // Ambil nama tamu
     showPage(currentPageIndex); // Tampilkan halaman pertama
-});
 
-document.addEventListener("DOMContentLoaded", function() {
-  const pages = document.querySelectorAll('.page');
-  let currentPageIndex = 0;
-
-  // Fungsi untuk menampilkan halaman berdasarkan index
-  function showPage(index) {
-    pages.forEach((page, i) => {
-      if (i === index) {
-        page.classList.add('active');
-      } else {
-        page.classList.remove('active');
-      }
+    // Menangani scroll untuk berpindah halaman
+    window.addEventListener('wheel', function(event) {
+        if (event.deltaY > 0) {
+            // Scroll ke bawah, pindah ke halaman berikutnya
+            nextPage();
+        } else {
+            // Scroll ke atas, pindah ke halaman sebelumnya
+            prevPage();
+        }
     });
-  }
-
-  // Menampilkan halaman pertama
-  showPage(currentPageIndex);
-
-  // Menangani scroll untuk berpindah halaman
-  window.addEventListener('wheel', function(event) {
-    if (event.deltaY > 0) {
-      // Scroll ke bawah, pindah ke halaman berikutnya
-      if (currentPageIndex < pages.length - 1) {
-        currentPageIndex++;
-        showPage(currentPageIndex);
-      }
-    } else {
-      // Scroll ke atas, pindah ke halaman sebelumnya
-      if (currentPageIndex > 0) {
-        currentPageIndex--;
-        showPage(currentPageIndex);
-      }
-    }
-  });
 });
