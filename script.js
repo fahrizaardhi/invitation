@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     getGuestNameFromURL(); // Ambil nama tamu
     showPage(currentPageIndex); // Tampilkan halaman pertama
 
-    // Menangani scroll untuk berpindah halaman
+    // Menangani scroll untuk berpindah halaman (Desktop)
     window.addEventListener('wheel', function(event) {
         if (event.deltaY > 0) {
             // Scroll ke bawah, pindah ke halaman berikutnya
@@ -68,6 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Scroll ke atas, pindah ke halaman sebelumnya
             prevPage();
+        }
+    });
+
+    // Menangani scroll untuk perangkat mobile (touch)
+    let startTouchY = 0; // Variabel untuk menyimpan posisi sentuhan awal
+    window.addEventListener('touchstart', function(event) {
+        startTouchY = event.touches[0].clientY; // Ambil posisi Y sentuhan pertama
+    });
+
+    window.addEventListener('touchmove', function(event) {
+        const touchMoveY = event.touches[0].clientY;
+        if (startTouchY - touchMoveY > 50) {
+            // Geser ke bawah, pindah ke halaman berikutnya
+            nextPage();
+            startTouchY = touchMoveY; // Reset posisi sentuhan
+        } else if (touchMoveY - startTouchY > 50) {
+            // Geser ke atas, pindah ke halaman sebelumnya
+            prevPage();
+            startTouchY = touchMoveY; // Reset posisi sentuhan
         }
     });
 });
