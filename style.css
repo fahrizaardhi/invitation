@@ -72,12 +72,12 @@ p,
 
 /* Judul dan teks */
 h1 {
-  color: #8f7b48;
+  color: #01618b;
   font-size: 35px;
 
 }
 h2 {
-  color: #8f7b48;
+  color: #01618b;
 }
 
 p {
@@ -94,7 +94,7 @@ button {
   padding: 12px 24px;
   font-size: 16px;
   color: #fff;
-  background-color: #8f7b48;
+  background-color: #01618b;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -104,7 +104,7 @@ button {
 }
 
 button:hover {
-  background-color: #ffc4008e;
+  background-color: #0781b6;
 }
 
 /* Responsif untuk layar kecil */
@@ -119,14 +119,27 @@ button:hover {
   }
 }
 
+/* Kontainer Tombol */
+.nav-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  /* Sesuaikan lebar kontainer tombol */
+  max-width: 600px;
+  /* Max lebar kontainer tombol */
+  z-index: 100;
+  /* Pastikan tombol berada di atas konten lainnya */
+}
+
 /* Tombol navigasi */
 .nav-btn {
-  /* position: absolute; */
-  /* bottom: 20px; */
-  /* padding: 10px 15px; */
   border: none;
   border-radius: 5%;
-  background-color: #8f7b48;
+  background-color: #01618b;
   color: #fff;
   font-size: 10px;
   cursor: pointer;
@@ -134,18 +147,11 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.nav-btn.prev {
-  left: 20px;
-}
-
-.nav-btn.next {
-  right: 20px;
+  padding: 10px;
 }
 
 .nav-btn:hover {
-  background-color: #ffc4008e;
+  background-color: #0781b6;
 }
 
 /* Ikon */

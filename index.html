@@ -43,58 +43,165 @@
     <!-- Page Profile -->
     <section class="page" id="profile">
       <p style="font-size:12px;">
-        بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْ<br/>
-        <b>Assalamu'alaikum warahmatullahi wabarakatuh</b><br/><br />
-        Tanpa mengurangi rasa hormat, kami bermaksud mengundang sekaligus mengharapkan doa restu dari Bapak/Ibu/Saudara/i dalam
+        بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْ<br />
+        <b>Assalamu'alaikum warahmatullahi wabarakatuh</b><br /><br />
+        Tanpa mengurangi rasa hormat, kami bermaksud mengundang sekaligus mengharapkan doa restu dari Bapak/Ibu/Saudara/i
+        dalam
         acara Walimatul Khitan putra kami:
       </p>
-    <div class="profile-photo">
-      <img src="profile.png" alt="Foto Muhammad Zain Arfandi" />
-    </div>      
-    <h3 class="formal-text" style="margin-top:-10px;">Muhammad Zain Arfandi</h3>
+      <div class="profile-photo">
+        <img src="profile.png" alt="Foto Muhammad Zain Arfandi" />
+      </div>
+      <h3 class="formal-text" style="margin-top:-10px;">Muhammad Zain Arfandi</h3>
       <p style="font-size:12px;">
-        Putra ke tiga dari<br/>
-        <p class="formal-text" style="font-size:12px;"><b>Bapak Wahyudi Nugroho & Ibu Yuni Riana</b></p>
+        Putra ke tiga dari<br />
+      <p class="formal-text" style="font-size:12px;"><b>Bapak Wahyudi Nugroho & Ibu Yuni Riana</b></p>
       </p>
+      <!-- Tombol navigasi -->
+      <div class="nav-container">
+        <button class="nav-btn prev" onclick="goToPage('opening')">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button class="nav-btn prev" onclick="goToPage('profile')">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('info')">
+          <i class="fa-solid fa-calendar"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('google_maps')">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('prayers')">
+          <i class="fa-solid fa-hands-praying"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('thanks')">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
     </section>
+
 
     <!-- Page Informasi Acara -->
     <section class="page" id="info">
       <h2>Informasi Acara</h2>
-      <p>Hari: Minggu</p>
-      <p>Tanggal: 24 Desember 2024</p>
-      <p>Waktu: 10.00 WIB</p>
-      <p>Lokasi: Rumah Kami</p>
+      <!-- <p style="font-size:12px;"><b>Informasi Acara</b><br/><br /> -->
+      <p style="font-size:12px;">
+        <b>Hari</b> : Rabu<br/>
+        <b>Tanggal</b> : 25 Desember 2024<br/>
+        <b>Waktu</b> : 10.00 WIB s.d. Selesai<br/>
+        <b>Lokasi</b> : Jl. Gamprit 4 RT.06 RW.014 No.5, Kel.Jatiwaringin, Kec.Pondok Gede, Kota Bekasi, 17425</p>
       <!-- Tombol navigasi -->
-      <button class="nav-btn prev" onclick="goToPage('profile')">
-        <i class="fas fa-arrow-left"></i>
-      </button>
-      <button class="nav-btn next" onclick="goToPage('prayers')">
-        <i class="fas fa-arrow-right"></i>
-      </button>
+      <div class="nav-container">
+        <button class="nav-btn prev" onclick="goToPage('opening')">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button class="nav-btn prev" onclick="goToPage('profile')">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('info')">
+          <i class="fa-solid fa-calendar"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('google_maps')">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('prayers')">
+          <i class="fa-solid fa-hands-praying"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('thanks')">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Page Google Maps -->
+    <section class="page" id="google_maps">
+      <h2>Google Maps</h2>
+      <iframe src="https://www.google.com/maps?q=-6.275765,106.9188117&z=17&hl=en&output=embed" width="250" height="450"
+        style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>      <!-- Tombol navigasi -->
+      <!-- Tombol navigasi -->
+      <div class="nav-container">
+        <button class="nav-btn prev" onclick="goToPage('opening')">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button class="nav-btn prev" onclick="goToPage('profile')">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('info')">
+          <i class="fa-solid fa-calendar"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('google_maps')">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('prayers')">
+          <i class="fa-solid fa-hands-praying"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('thanks')">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
     </section>
 
     <!-- Page Doa -->
     <section class="page" id="prayers">
       <h2>Doa</h2>
-      <p>Semoga Allah SWT senantiasa memberikan keberkahan dan kesehatan.</p>
+      <p style="font-size:12px;">رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ
+      <br/>
+      <br/>
+      Ya Tuhanku, jadikanlah aku dan anak cucuku sebagai orang yang mendirikan salat. Ya Tuhan kami, terimalah doaku.<br/>(Q.S Ibrahim: 40)</p>
       <!-- Tombol navigasi -->
-      <button class="nav-btn prev" onclick="goToPage('info')">
-        <i class="fas fa-arrow-left"></i>
-      </button>
-      <button class="nav-btn next" onclick="goToPage('thanks')">
-        <i class="fas fa-arrow-right"></i>
-      </button>
+      <div class="nav-container">
+        <button class="nav-btn prev" onclick="goToPage('opening')">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button class="nav-btn prev" onclick="goToPage('profile')">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('info')">
+          <i class="fa-solid fa-calendar"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('google_maps')">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('prayers')">
+          <i class="fa-solid fa-hands-praying"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('thanks')">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
     </section>
 
     <!-- Page Ucapan Terima Kasih -->
     <section class="page" id="thanks">
-      <h2>Ucapan Terima Kasih</h2>
-      <p>Terima kasih atas doa dan kehadiran Anda.</p>
+      <h2>Terima Kasih</h2>
+      <p style="font-size:12px;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan do'a
+      restu kepada kami.
+      Atas kehadiran dan do'a restunya, kami ucapkan terima kasih.<br/>
+      Jazakumullah Khairan.</p><br />
+      <p style="font-size:12px;"><b>Wssalamu'alaikum warahmatullahi wabarakatuh</b></p>
+
       <!-- Tombol navigasi -->
-      <button class="nav-btn prev" onclick="goToPage('prayers')">
-        <i class="fas fa-arrow-left"></i>
-      </button>
+      <div class="nav-container">
+        <button class="nav-btn prev" onclick="goToPage('opening')">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <button class="nav-btn prev" onclick="goToPage('profile')">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('info')">
+          <i class="fa-solid fa-calendar"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('google_maps')">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('prayers')">
+          <i class="fa-solid fa-hands-praying"></i>
+        </button>
+        <button class="nav-btn next" onclick="goToPage('thanks')">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
     </section>
   </div>
 
