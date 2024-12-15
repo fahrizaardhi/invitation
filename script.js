@@ -15,6 +15,14 @@ const observer = new IntersectionObserver((entries, observer) => {
   threshold: 0.5  // Trigger when 50% of the section is visible
 });
 
+// Target all sections for animation
+const sections = document.querySelectorAll('.section .page');
+sections.forEach(section => {
+  // Initially hide the content
+  section.style.visibility = 'hidden';
+  observer.observe(section);
+});
+
 const playAudioBtn = document.getElementById('play-audio-btn');
 const audio = document.getElementById('audio');
 const audioIcon = document.getElementById('audio-icon');
