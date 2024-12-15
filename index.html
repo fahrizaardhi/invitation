@@ -23,223 +23,105 @@
 
 <body>
   <div id="app">
-    <!-- Background -->
+
     <div class="background"></div>
 
-    <!-- Page Opening -->
-    <section class="page active" id="opening">
-      <h1 style="font-size: 48px;">Walimatul Khitan</h1>
-          <div class="cover-photo">
-            <img src="anak.png" alt="Foto Anak Sunat" />
-          </div>
-      <h3 class="formal-text">Muhammad Zain Arfandi</h3>
-      <i>
-        <div style="font-size:12px; margin-top:35px;">Kepada Yth<br>Bapak/Ibu/Saudara/i</div>
-      </i>
-      <p id="guest-name">[Nama Tamu]</p>
-      <i>
-        <div style="font-size:10px;">Mohon maaf apabila ada kesalahan penulisan nama/gelar</div>
-      </i>
-      <!-- Tombol navigasi -->
-      <button class="nav-btn next" onclick="nextPage()">
-        Buka Undangan
-      </button>
-    </section>
+    <button id="play-audio-btn">
+      <i id="audio-icon" class="fa fa-volume-up"></i>
+    </button>
+    <audio id="audio" src="maherzain.mp3" preload="auto"></audio>
 
-    <!-- Page Profile -->
-    <section class="page" id="profile">
-      <p style="font-size:12px;">
-        بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْ<br />
-        <b><i>Assalamu'alaikum warahmatullahi wabarakatuh</i></b><br /><br />
-        Tanpa mengurangi rasa hormat, kami bermaksud mengundang sekaligus mengharapkan doa restu dari Bapak/Ibu/Saudara/i
-        dalam
-        acara Walimatul Khitan putra kami:
-      </p>
-      <div class="profile-photo">
-        <img src="profile.png" alt="Foto Muhammad Zain Arfandi" />
-      </div>
-      <h3 class="formal-text" style="margin-top:-10px;">Muhammad Zain Arfandi</h3>
-      <p style="font-size:12px;">
-        Anak ke tiga dari<br />
-      <p class="formal-text" style="font-size:12px;"><b>Bapak Wahyudi Nugroho & Ibu Yuni Riana</b></p>
-      </p>
-      <!-- Tombol navigasi -->
-      <div class="nav-container">
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('opening')">
-            <i class="fa-solid fa-house"></i>
-          </button>
-          <span class="btn-text">Home</span>
+    <!-- Section Halaman -->
+    <div class="section">
+      <section class="page active" id="opening">
+        <h1 class="fade-in" style="font-size: 48px;">Walimatul Khitan</h1>
+        <div class="cover-photo fade-in">
+          <img src="anak.png" alt="Foto Anak Sunat" />
         </div>
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('profile')">
-            <i class="fa-solid fa-user"></i>
-          </button>
-          <span class="btn-text">Profile</span>
+        <h3 class="formal-text fade-in">Muhammad Zain Arfandi</h3>
+        <i class="fade-in">
+          <div style="font-size:12px; margin-top:35px;">Kepada Yth<br>Bapak/Ibu/Saudara/i</div>
+        </i>
+        <p id="guest-name" class="fade-in">[Nama Tamu]</p>
+        <i>
+          <div class="fade-in" style="font-size:10px;">Mohon maaf apabila ada kesalahan penulisan nama/gelar</div>
+        </i>
+        <br/>
+        <br/>
+        <!-- Ikon panah bergerak -->
+        <div class="arrow">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('info')">
-            <i class="fa-solid fa-calendar"></i>
-          </button>
-          <span class="btn-text">Info</span>
+        <p>Scroll down</p>
+      </section>
+    </div>
+    <div class="section">
+      <section class="page" id="profile">
+        <p class="fade-in" style="font-size:12px;">
+          بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْ<br />
+          <b><i>Assalamu'alaikum warahmatullahi wabarakatuh</i></b><br /><br />
+          Tanpa mengurangi rasa hormat, kami bermaksud mengundang sekaligus mengharapkan doa restu dari
+          Bapak/Ibu/Saudara/i
+          dalam
+          acara Walimatul Khitan putra kami:
+        </p>
+        <div class="profile-photo fade-in">
+          <img src="profile.png" alt="Foto Muhammad Zain Arfandi" />
         </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('prayers')">
-            <i class="fa-solid fa-hands-praying"></i>
-          </button>
-          <span class="btn-text">Do'a</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('thanks')">
-            <i class="fa-solid fa-heart"></i>
-          </button>
-          <span class="btn-text">Love</span>
-        </div>
-      </div>
+        <h3 class="formal-text fade-in" style="margin-top:-10px;">Muhammad Zain Arfandi</h3>
+        <p style="font-size:12px;">
+          Anak ke tiga dari<br />
+        <p class="formal-text fade-in" style="font-size:12px;"><b>Bapak Wahyudi Nugroho & Ibu Yuni Riana</b></p>
+        </p>
+    </div>
+    <div class="section">
+      <section class="page" id="info">
+        <h2 class="fade-in">Informasi Acara</h2>
+        <p class="fade-in" style="font-size:12px;">
+          <b>Hari</b> : Rabu<br />
+          <b>Tanggal</b> : 25 Desember 2024<br />
+          <b>Waktu</b> : 10.00 WIB s.d. Selesai<br />
+          <b>Lokasi</b> : Jl. Gamprit 4 RT.06 RW.014 No.5, Kel.Jatiwaringin, Kec.Pondok Gede, Kota Bekasi, 17425
+        </p>
 
+        <br /><br />
 
-    </section>
-
-
-    <!-- Page Informasi Acara -->
-    <section class="page" id="info">
-      <h2>Informasi Acara</h2>
-      <!-- <p style="font-size:12px;"><b>Informasi Acara</b><br/><br /> -->
-      <p style="font-size:12px;">
-        <b>Hari</b> : Rabu<br/>
-        <b>Tanggal</b> : 25 Desember 2024<br/>
-        <b>Waktu</b> : 10.00 WIB s.d. Selesai<br/>
-        <b>Lokasi</b> : Jl. Gamprit 4 RT.06 RW.014 No.5, Kel.Jatiwaringin, Kec.Pondok Gede, Kota Bekasi, 17425</p>
-      
-      <br/><br />
-
-      <iframe src="https://www.google.com/maps?q=-6.275765,106.9188117&z=17&hl=en&output=embed" width="250" height="250"
-        style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
-      <p style="font-size:12px;">Google Maps</p>
-      <!-- Tombol navigasi -->
-      <div class="nav-container">
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('opening')">
-            <i class="fa-solid fa-house"></i>
-          </button>
-          <span class="btn-text">Home</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('profile')">
-            <i class="fa-solid fa-user"></i>
-          </button>
-          <span class="btn-text">Profile</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('info')">
-            <i class="fa-solid fa-calendar"></i>
-          </button>
-          <span class="btn-text">Info</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('prayers')">
-            <i class="fa-solid fa-hands-praying"></i>
-          </button>
-          <span class="btn-text">Do'a</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('thanks')">
-            <i class="fa-solid fa-heart"></i>
-          </button>
-          <span class="btn-text">Love</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Page Doa -->
-    <section class="page" id="prayers">
-      <h2>Doa</h2>
-      <p style="font-size:12px;">رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ
-      <br/>
-      <br/>
-      Ya Tuhanku, jadikanlah aku dan anak cucuku sebagai orang yang mendirikan salat. Ya Tuhan kami, terimalah doaku.<br/>(Q.S Ibrahim: 40)</p>
-      <!-- Tombol navigasi -->
-      <div class="nav-container">
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('opening')">
-            <i class="fa-solid fa-house"></i>
-          </button>
-          <span class="btn-text">Home</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('profile')">
-            <i class="fa-solid fa-user"></i>
-          </button>
-          <span class="btn-text">Profile</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('info')">
-            <i class="fa-solid fa-calendar"></i>
-          </button>
-          <span class="btn-text">Info</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('prayers')">
-            <i class="fa-solid fa-hands-praying"></i>
-          </button>
-          <span class="btn-text">Do'a</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('thanks')">
-            <i class="fa-solid fa-heart"></i>
-          </button>
-          <span class="btn-text">Love</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Page Ucapan Terima Kasih -->
-    <section class="page" id="thanks">
-      <h2>Terima Kasih</h2>
-      <p style="font-size:12px;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan do'a
-      restu kepada kami.
-      Atas kehadiran dan do'a restunya, kami ucapkan terima kasih.<br/>
-      <i>Jazakumullah Khairan.</i></p><br />
-      <p style="font-size:12px;"><b><i>Wassalamu'alaikum warahmatullahi wabarakatuh</i></b></p>
-
-      <!-- Tombol navigasi -->
-      <div class="nav-container">
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('opening')">
-            <i class="fa-solid fa-house"></i>
-          </button>
-          <span class="btn-text">Home</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn prev" onclick="goToPage('profile')">
-            <i class="fa-solid fa-user"></i>
-          </button>
-          <span class="btn-text">Profile</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('info')">
-            <i class="fa-solid fa-calendar"></i>
-          </button>
-          <span class="btn-text">Info</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('prayers')">
-            <i class="fa-solid fa-hands-praying"></i>
-          </button>
-          <span class="btn-text">Do'a</span>
-        </div>
-        <div class="nav-item">
-          <button class="nav-btn next" onclick="goToPage('thanks')">
-            <i class="fa-solid fa-heart"></i>
-          </button>
-          <span class="btn-text">Love</span>
-        </div>
-      </div>
-    </section>
+        <iframe src="https://www.google.com/maps?q=-6.275765,106.9188117&z=17&hl=en&output=embed" width="250"
+          height="250" style="border:0;" allowfullscreen="" loading="lazy" title="Google Maps">
+        </iframe>
+        <p class="fade-in" style="font-size:12px;">Google Maps</p>
+      </section>
+    </div>
+    <div class="section">
+      <section class="page" id="prayers">
+        <h2 class="fade-in">Doa</h2>
+        <p class="fade-in" style="font-size:12px;">رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي رَبَّنَا وَتَقَبَّلْ دُعَاءِ
+          <br />
+          <br />
+          Ya Tuhanku, jadikanlah aku dan anak cucuku sebagai orang yang mendirikan salat. Ya Tuhan kami, terimalah
+          doaku.<br />(Q.S Ibrahim: 40)
+        </p>
+      </section>
+    </div>
+    <div class="section">
+      <section class="page" id="thanks">
+        <h2 class="fade-in">Terima Kasih</h2>
+        <p class="fade-in" style="font-size:12px;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
+          berkenan
+          hadir serta memberikan do'a
+          restu kepada kami.
+          Atas kehadiran dan do'a restunya, kami ucapkan terima kasih.<br />
+          <i>Jazakumullah Khairan.</i>
+        </p><br />
+        <p style="font-size:12px;"><b><i>Wassalamu'alaikum warahmatullahi wabarakatuh</i></b></p>
+      </section>
+    </div>
   </div>
 
   <script src="script.js"></script>
+
 </body>
 
 </html>

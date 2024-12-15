@@ -1,67 +1,69 @@
-/* Gaya umum */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-/* Memastikan halaman bisa scroll di mobile */
+/* Mengatur tampilan umum */
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
-  /* Mencegah scroll body */
 }
 
-.page {
-  min-height: 100vh;
-  /* Agar setiap halaman memenuhi layar penuh */
-}
-
-/* Font untuk judul utama */
-h1,
-h2,
-.title {
-  font-family: 'Great Vibes', cursive;
-}
-
-/* Font untuk teks isi */
-body,
-p,
-.content {
-  font-family: 'Open Sans', sans-serif;
-}
-
-/* Font untuk teks formal atau elemen tambahan */
-.formal-text {
-  font-family: 'Merriweather', serif;
-}
-
-/* Ukuran responsif khusus untuk handphone */
 #app {
-  display: flex;
+  display: relative;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
-  height: 100vh;
-  overflow: auto;
-  /* Pastikan halaman dapat scroll */
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  /* Agar scroll lebih lancar di perangkat mobile */
-  }
+}
 
-/* Gaya untuk latar belakang */
+.section {
+  min-height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Warna latar belakang berbeda untuk setiap section */
+.section:nth-child(odd) {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpeg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(0.9);}
+
+.section:nth-child(even) {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpeg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(0.9);}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .section {
+    min-height: 100vh;
+    /* Pada layar kecil, setiap section memenuhi layar */
+  }
+}
+
 .background {
   position: absolute;
   top: 0;
@@ -69,137 +71,12 @@ p,
   width: 100%;
   height: 100%;
   background-image: url('background.jpeg');
-  /* Path gambar latar */
   background-size: cover;
   background-position: center;
   z-index: -1;
   filter: brightness(0.9);
-  /* Efek gelap agar teks terlihat */
 }
 
-/* Gaya untuk setiap halaman */
-.page {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.page.active {
-  display: flex;
-}
-
-/* Judul dan teks */
-h1 {
-  color: #01618b;
-  font-size: 35px;
-
-}
-h2 {
-  color: #01618b;
-}
-
-p {
-  margin: 0;
-  font-size: 9px;
-  font-weight: normal;
-  color: #000000;
-  /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); */
-}
-
-/* Tombol */
-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #01618b;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.2);
-}
-
-button:hover {
-  background-color: #0781b6;
-}
-
-/* Responsif untuk layar kecil */
-@media (max-width: 768px) {
-  p {
-    font-size: 16px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-}
-
-/* Kontainer Tombol */
-.nav-container {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  /* Sesuaikan lebar kontainer tombol */
-  max-width: 600px;
-  /* Max lebar kontainer tombol */
-  z-index: 100;
-  /* Pastikan tombol berada di atas konten lainnya */
-}
-
-/* Tombol navigasi */
-.nav-btn {
-  border: none;
-  border-radius: 5%;
-  background-color: #01618b;
-  color: #fff;
-  font-size: 10px;
-  cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 10px; */
-  flex-direction: column;
-}
-
-.nav-btn span {
-  margin-top: 5px;
-  /* Menambahkan sedikit jarak antara ikon dan teks */
-  font-size: 12px;
-  font-weight: bold;
-  /* Sesuaikan ukuran font jika perlu */
-}
-
-.nav-btn:hover {
-  background-color: #0781b6;
-}
-
-/* Ikon */
-.nav-btn i {
-  margin: 0;
-  padding: 0;
-}
-/* Text */
-.btn-text {
-  font-size: 12px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
-  /* Menambahkan bayangan di sekitar teks */
-}
-/* Styling untuk foto profil */
 .profile-photo {
   margin: 20px auto;
   width: 150px;
@@ -215,19 +92,215 @@ button:hover {
   height: 100%;
   object-fit: cover;
 }
-/* Styling untuk foto profil */
+
 .cover-photo {
-  /* margin: 20px auto; */
+  margin: 20px auto;
   width: 150px;
   height: 150px;
-  /* border-radius: 50%; */
   overflow: hidden;
-  /* border: 3px solid #ccc; */
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .cover-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+h1,
+h2,
+.title {
+  font-family: 'Great Vibes', cursive;
+  color: #01618b;
+}
+
+body,
+p,
+.content {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.formal-text {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-size: 35px;
+}
+h3 {
+  font-size: 20px;
+}
+
+p {
+  margin: 0;
+  font-size: 9px;
+  font-weight: normal;
+  color: #000000;
+}
+
+button {
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #01618b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 5%;
+  background-color: #01618b;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nav-btn span {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.nav-btn i {
+  margin: 0;
+  padding: 0;
+}
+
+/* Kontainer untuk anak panah */
+.arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+/* Garis panah */
+.arrow span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid #01618b;
+  border-bottom: 3px solid #01618b;
+  transform: rotate(45deg);
+  animation: move 1.5s infinite;
+}
+
+/* Animasi untuk panah */
+.arrow span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Efek naik-turun */
+@keyframes move {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(10px) rotate(45deg);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(20px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Animasi Fade In */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+/* Efek fade-in untuk elemen */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Menambahkan penundaan untuk elemen yang berbeda */
+h1.fade-in {
+  animation-delay: 0s;
+  /* No delay for h1 */
+}
+
+.cover-photo.fade-in {
+  animation-delay: 1s;
+  /* Delay for cover-photo */
+}
+
+h3.fade-in {
+  animation-delay: 2s;
+  /* Delay for h3 */
+}
+
+.i.fade-in {
+  animation-delay: 3s;
+  /* Delay for first i element */
+}
+
+#guest-name.fade-in {
+  animation-delay: 3s;
+  /* Delay for guest name */
+}
+
+.i .fade-in {
+  animation-delay: 3s;
+  /* Delay for second i element */
+}
+
+p.fade-in {
+  animation-delay: 3s;
+  /* Delay for scroll down text */
+}
+
+#play-audio-btn {
+  position: fixed;
+  bottom: 0px;
+  left: 20px;
+  color: #01618b;
+  border: 2px solid #01618b;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  background-color: white;
+  box-shadow: none;
+}
+
+#play-audio-btn i {
+  font-size: 15px;
 }

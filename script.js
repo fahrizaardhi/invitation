@@ -1,92 +1,43 @@
-let currentPageIndex = 0; // Indeks halaman aktif
-const pages = document.querySelectorAll(".page"); // Daftar semua halaman
-
-/**
- * Menampilkan halaman berdasarkan indeks
- * @param {number} index - Indeks halaman yang ingin ditampilkan
- */
-function showPage(index) {
-    pages.forEach((page, i) => {
-        page.classList.toggle("active", i === index); // Menambahkan class 'active' untuk halaman yang sesuai
-    });
-}
-
-/**
- * Menampilkan halaman berikutnya
- */
-function nextPage() {
-    if (currentPageIndex < pages.length - 1) {
-        currentPageIndex++;
-        showPage(currentPageIndex);
+// Intersection Observer to trigger fade-in animation and hide content when not in view
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // When the section is in view, add the fade-in class and make the content visible
+      entry.target.classList.add('fade-in');
+      entry.target.style.visibility = 'visible';  // Make the content visible
+    } else {
+      // When the section is not in view, remove the fade-in class and hide the content
+      entry.target.classList.remove('fade-in');
+      entry.target.style.visibility = 'hidden';  // Hide the content
     }
-}
+  });
+}, {
+  threshold: 0.5  // Trigger when 50% of the section is visible
+});
 
-/**
- * Menampilkan halaman sebelumnya
- */
-function prevPage() {
-    if (currentPageIndex > 0) {
-        currentPageIndex--;
-        showPage(currentPageIndex);
-    }
-}
+const playAudioBtn = document.getElementById('play-audio-btn');
+const audio = document.getElementById('audio');
+const audioIcon = document.getElementById('audio-icon');
 
-/**
- * Navigasi langsung ke halaman berdasarkan ID
- * @param {string} pageId - ID halaman yang ingin dituju
- */
-function goToPage(pageId) {
-    const targetPageIndex = Array.from(pages).findIndex(page => page.id === pageId);
-    if (targetPageIndex !== -1) {
-        currentPageIndex = targetPageIndex;
-        showPage(currentPageIndex);
-    }
-}
+// Setel audio agar mute dan tidak diputar pada awalnya
+audio.muted = true;
+audio.pause();  // Pastikan audio tidak diputar pada awal
+audioIcon.classList.add('fa-volume-mute');
 
-/**
- * Mengambil nama tamu dari URL
- */
-function getGuestNameFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const guestName = urlParams.get('name') || 'Tamu Undangan'; // Default jika tidak ada nama
-    const guestNameElement = document.getElementById('guest-name');
-    if (guestNameElement) {
-        guestNameElement.textContent = guestName;
-    }
-}
+// Fungsi untuk toggle audio
+playAudioBtn.addEventListener('click', () => {
+  if (audio.muted) {
+    // Jika audio sedang mute, unmute dan play, lalu ganti ikon
+    audio.muted = false;
+    audio.play();
+    audioIcon.classList.remove('fa-volume-mute');
+    audioIcon.classList.add('fa-volume-up');
+  } else {
+    // Jika audio tidak mute, mute dan pause, lalu ganti ikon
+    audio.muted = true;
+    audio.pause();
+    audioIcon.classList.remove('fa-volume-up');
+    audioIcon.classList.add('fa-volume-mute');
 
-// Inisialisasi setelah halaman dimuat
-document.addEventListener('DOMContentLoaded', () => {
-    getGuestNameFromURL(); // Ambil nama tamu
-    showPage(currentPageIndex); // Tampilkan halaman pertama
-
-    // Menangani scroll untuk berpindah halaman (Desktop)
-    window.addEventListener('wheel', function(event) {
-        if (event.deltaY > 0) {
-            // Scroll ke bawah, pindah ke halaman berikutnya
-            nextPage();
-        } else {
-            // Scroll ke atas, pindah ke halaman sebelumnya
-            prevPage();
-        }
-    });
-
-    // Menangani scroll untuk perangkat mobile (touch)
-    let startTouchY = 0; // Variabel untuk menyimpan posisi sentuhan awal
-    window.addEventListener('touchstart', function(event) {
-        startTouchY = event.touches[0].clientY; // Ambil posisi Y sentuhan pertama
-    });
-
-    window.addEventListener('touchmove', function(event) {
-        const touchMoveY = event.touches[0].clientY;
-        if (startTouchY - touchMoveY > 50) {
-            // Geser ke bawah, pindah ke halaman berikutnya
-            nextPage();
-            startTouchY = touchMoveY; // Reset posisi sentuhan
-        } else if (touchMoveY - startTouchY > 50) {
-            // Geser ke atas, pindah ke halaman sebelumnya
-            prevPage();
-            startTouchY = touchMoveY; // Reset posisi sentuhan
-        }
-    });
+  }
 });
