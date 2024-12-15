@@ -8,7 +8,7 @@ html {
 }
 
 #app {
-  display: flex;
+  display: relative;
   flex-direction: column;
   height: 100%;
   overflow-y: scroll;
